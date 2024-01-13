@@ -1,0 +1,40 @@
+{
+    "name": "legecha/enumpty",
+    "description": "Find yourself creating methods like label(), description() or icon() on your enums? This very simple package takes the legwork out of doing so for you, and gives you the same functionality without implementing the methods.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Legecha\\Enumpty\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "legecha",
+            "email": "code@legecha.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=8.1"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "dev-master",
+        "pestphp/pest": "2.x-dev"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "fix": "vendor/bin/php-cs-fixer fix --verbose --show-progress=dots src",
+        "lint": "vendor/bin/php-cs-fixer fix --dry-run --verbose --show-progress=dots src"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
