@@ -48,7 +48,8 @@ array(4) {
   string(14) "My Fourth Case"
 }
 */
-MyEnum::descriptionCases();/*
+MyEnum::descriptionCases();
+/*
 array(4) {
   ["MyEnum::First"]=>
   string(20) "My first description"
@@ -58,6 +59,41 @@ array(4) {
   NULL
   ["MyEnum::Fourth"]=>
   NULL
+}
+*/
+```
+## But wait, there's more!
+
+There is also the `Names` trait, which provides a `name()` method to get a "pretty" version of your enum case's name, and a `names()` static method to retrieve them all for a specific enum. No attributes required.
+
+```php
+use Legecha\Enumpty\Names;
+
+enum MyEnum
+{
+    use Names;
+
+    case MyFirstCase;
+    case Second;
+    case HereIsTheThird;
+    case DontForgetTheFourth;
+}
+
+$enum = MyEnum::MyFirstCase;
+$enum->name(); // string(13) "My First Case"
+MyEnum::HereIsTheThird->name(); // string (15) "Here Is The Third"
+
+MyEnum::names();
+/*
+array(4) {
+  ["MyEnum::MyFirstCase"]=>
+  string(13) "My First Case"
+  ["MyEnum::Second"]=>
+  string(6) "Second"
+  ["MyEnum::HereIsTheThird"]=>
+  string(15) "Here Is The Third"
+  ["MyEnum::DontForGetTheFourth"]=>
+  string(23) "Dont Forget The Fourth"
 }
 */
 ```
