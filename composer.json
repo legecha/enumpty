@@ -29,8 +29,8 @@
     },
     "scripts": {
         "test": "vendor/bin/pest",
-        "fix": "vendor/bin/php-cs-fixer fix --verbose --show-progress=dots src",
-        "lint": "vendor/bin/php-cs-fixer fix --dry-run --verbose --show-progress=dots src"
+        "fix": "vendor/bin/php-cs-fixer fix --show-progress=dots",
+        "lint": "vendor/bin/php-cs-fixer fix --dry-run --show-progress=dots"
     },
     "config": {
         "allow-plugins": {

@@ -9,7 +9,7 @@ use Attribute;
 /**
  * A mock attribute to aid in testing.
  */
-#[Attribute(Attribute::TARGET_CLASS_CONSTANT)]
+#[\Attribute(\Attribute::TARGET_CLASS_CONSTANT)]
 class MockDescribeEnum
 {
     /**
@@ -22,7 +22,6 @@ class MockDescribeEnum
     /**
      * Create a new MockDescribeEnum instance.
      *
-     * @param mixed $args,... A variable number of descriptions for the enum case.
      * @return void
      */
     public function __construct(...$descriptions)

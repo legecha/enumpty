@@ -5,10 +5,6 @@ declare(strict_types=1);
 namespace Legecha\Enumpty;
 
 use Legecha\Enumpty\Attributes\DescribeEnum;
-use ReflectionClass;
-use ReflectionEnum;
-use ReflectionEnumUnitCase;
-use Throwable;
 
 trait Describable
 {
@@ -34,7 +30,7 @@ trait Describable
         $descriptionType = preg_replace('/Cases$/', '', $name);
 
         $cases = [];
-        foreach ((new ReflectionEnum(static::class))->getCases() as $case) {
+        foreach ((new \ReflectionEnum(static::class))->getCases() as $case) {
             $caseName = static::class.'::'.$case->getName();
             $description = null;
 
@@ -57,7 +53,7 @@ trait Describable
 
     protected function getDescription($name, mixed $default): mixed
     {
-        $attributes = (new ReflectionEnumUnitCase(self::class, $this->name))->getAttributes(DescribeEnum::class);
+        $attributes = (new \ReflectionEnumUnitCase(self::class, $this->name))->getAttributes(DescribeEnum::class);
 
         if (empty($attributes)) {
             return null;
@@ -65,6 +61,7 @@ trait Describable
 
         // Always the first (and only) DescribeEnum attribute.
         $instance = $attributes[0]->newInstance();
+
         return $instance->descriptions[$name] ?? $default ?? null;
     }
 }

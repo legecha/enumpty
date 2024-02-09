@@ -108,7 +108,6 @@ it('only applies to correct attribute type', function () {
 });
 
 it('can get descriptions for all cases from enum', function () {
-
     expect(MockDescribeEnum::labelCases())
         ->toBe([
             MockDescribeEnum::class.'::First' => 'Label 1',

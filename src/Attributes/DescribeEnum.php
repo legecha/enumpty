@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Legecha\Enumpty\Attributes;
 
-use Attribute;
-
 /**
  * Describe enum cases, using named parameters. Values are
  * then automatically available  * via helper methods.
@@ -16,7 +14,7 @@ use Attribute;
  * YourEnum::SomeCase->description()
  * YourEnum::SomeCase->colour()
  */
-#[Attribute(Attribute::TARGET_CLASS_CONSTANT)]
+#[\Attribute(\Attribute::TARGET_CLASS_CONSTANT)]
 class DescribeEnum
 {
     /**
@@ -29,7 +27,6 @@ class DescribeEnum
     /**
      * Create a new DescribeEnum instance.
      *
-     * @param mixed $args,... A variable number of descriptions for the enum case.
      * @return void
      */
     public function __construct(...$descriptions)

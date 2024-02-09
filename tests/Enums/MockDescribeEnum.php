@@ -12,7 +12,7 @@ enum MockDescribeEnum: string
 {
     use Describable;
 
-    #[DescribeEnum(label: 'Label 1', description: 'Description 1', colour: 'red', count:123, default: true)]
+    #[DescribeEnum(label: 'Label 1', description: 'Description 1', colour: 'red', count: 123, default: true)]
     case First = 'first';
     #[DescribeEnum(label: 'Label 2', description: 'Description 2', colour: 'amber', count: 223, default: false)]
     case Second = 'second';
